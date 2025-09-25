@@ -17,157 +17,49 @@
             --dark-gray: #343a40;
             --border-color: #dee2e6;
         }
-
-        body { 
-            font-family: 'Poppins', Arial, sans-serif; 
-            background-color: var(--light-gray); 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            padding: 40px 15px; 
-            min-height: 100vh; 
-            margin: 0;
-        }
-
-        .main-wrapper {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .form-container, #thankYouContainer { 
-            background-color: #fff; 
-            padding: 30px 40px; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-            overflow: hidden; 
-            transition: opacity 0.3s ease-in-out;
-        }
-        
+        body { font-family: 'Poppins', Arial, sans-serif; background-color: var(--light-gray); display: flex; justify-content: center; align-items: center; padding: 40px 15px; min-height: 100vh; margin: 0; }
+        .main-wrapper { width: 100%; max-width: 600px; }
+        .form-container, #thankYouContainer { background-color: #fff; padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); overflow: hidden; transition: opacity 0.3s ease-in-out; }
         .logo-container { text-align: center; margin-bottom: 25px; }
         .logo-container img { max-width: 160px; height: auto; }
-        
         h2 { text-align: center; color: var(--dark-gray); margin-bottom: 25px; font-weight: 600; }
-        
-        /* Progress Bar */
-        .progress-bar-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            list-style: none;
-            padding: 0;
-        }
-        .step {
-            flex: 1;
-            text-align: center;
-            position: relative;
-        }
-        .step .step-circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #fff;
-            border: 2px solid var(--border-color);
-            display: inline-block;
-            color: var(--secondary-color);
-            font-weight: 500;
-            line-height: 26px;
-            transition: all 0.3s ease;
-        }
-        .step .step-title {
-            margin-top: 8px;
-            font-size: 12px;
-            color: var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-        .step.active .step-circle, .step.completed .step-circle {
-            border-color: var(--primary-color);
-            background-color: var(--primary-color);
-            color: #fff;
-        }
+        .progress-bar-container { display: flex; justify-content: space-between; margin-bottom: 30px; list-style: none; padding: 0; }
+        .step { flex: 1; text-align: center; position: relative; }
+        .step .step-circle { width: 30px; height: 30px; border-radius: 50%; background-color: #fff; border: 2px solid var(--border-color); display: inline-block; color: var(--secondary-color); font-weight: 500; line-height: 26px; transition: all 0.3s ease; }
+        .step .step-title { margin-top: 8px; font-size: 12px; color: var(--secondary-color); transition: all 0.3s ease; }
+        .step.active .step-circle, .step.completed .step-circle { border-color: var(--primary-color); background-color: var(--primary-color); color: #fff; }
         .step.active .step-title { color: var(--primary-color); font-weight: 500; }
         .step.completed .step-title { color: var(--dark-gray); }
-        .step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            width: 100%;
-            height: 2px;
-            background-color: var(--border-color);
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
-        .step.completed:not(:last-child)::after {
-            background-color: var(--primary-color);
-        }
-
+        .step:not(:last-child)::after { content: ''; position: absolute; top: 15px; left: 50%; width: 100%; height: 2px; background-color: var(--border-color); z-index: -1; transition: all 0.3s ease; }
+        .step.completed:not(:last-child)::after { background-color: var(--primary-color); }
         .form-step { display: none; }
         .form-step.active { display: block; animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
         fieldset { border: none; padding: 0; margin: 0; }
-        legend { display: none; } /* Replaced by progress bar */
-        
+        legend { display: none; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 6px; color: #555; font-weight: 500; font-size: 14px; }
-        .form-group input, .form-group select { 
-            width: 100%; padding: 12px; border: 1px solid var(--border-color); 
-            border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
-        }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); }
         .form-group input[type="file"] { padding: 8px; }
         .form-group input.invalid, .form-group select.invalid { border-color: var(--danger-color); }
-        
         .navigation-buttons { display: flex; justify-content: flex-end; gap: 10px; margin-top: 25px; }
-        .nav-btn { 
-            padding: 12px 25px; border: none; border-radius: 6px; 
-            font-size: 16px; cursor: pointer; font-weight: 500;
-            transition: background-color 0.2s, transform 0.2s;
-        }
+        .nav-btn { padding: 12px 25px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; font-weight: 500; transition: background-color 0.2s, transform 0.2s; }
         .nav-btn:hover { transform: translateY(-2px); }
         #backBtn { background-color: var(--secondary-color); color: #fff; margin-right: auto; display: none; }
         #nextBtn { background-color: var(--primary-color); color: #fff; }
         #submitBtn { background-color: var(--success-color); color: #fff; display: none; }
         .nav-btn:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }
-        
         #status-message { text-align: center; margin-top: 15px; font-weight: 500; min-height: 1.2em; font-size: 14px; }
         .success { color: var(--success-color); }
         .error { color: var(--danger-color); }
-
-        /* Thank You Section */
-        #thankYouContainer {
-            text-align: center;
-            padding: 50px 40px;
-        }
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-        }
-        .success-icon path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: draw 1s ease-in-out forwards;
-        }
+        #thankYouContainer { text-align: center; padding: 50px 40px; }
+        .success-icon { width: 80px; height: 80px; margin: 0 auto 20px; }
+        .success-icon path { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1s ease-in-out forwards; }
         @keyframes draw { to { stroke-dashoffset: 0; } }
-        #thankYouContainer h3 {
-            font-size: 24px;
-            color: var(--dark-gray);
-            margin-bottom: 10px;
-        }
-        #thankYouContainer p {
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-        }
-        #resetFormBtn {
-            background-color: var(--primary-color);
-        }
-
+        #thankYouContainer h3 { font-size: 24px; color: var(--dark-gray); margin-bottom: 10px; }
+        #thankYouContainer p { color: var(--secondary-color); margin-bottom: 30px; }
+        #resetFormBtn { background-color: var(--primary-color); }
     </style>
 </head>
 <body>
@@ -181,56 +73,39 @@
                 <h2>LinkedIn Training Details</h2>
 
                 <ul class="progress-bar-container">
-                    <li class="step active" data-step="0">
-                        <div class="step-circle">1</div>
-                        <div class="step-title">Employee Info</div>
-                    </li>
-                    <li class="step" data-step="1">
-                        <div class="step-circle">2</div>
-                        <div class="step-title">Training</div>
-                    </li>
-                    <li class="step" data-step="2">
-                        <div class="step-circle">3</div>
-                        <div class="step-title">Upload</div>
-                    </li>
+                    <li class="step active" data-step="0"><div class="step-circle">1</div><div class="step-title">Employee Info</div></li>
+                    <li class="step" data-step="1"><div class="step-circle">2</div><div class="step-title">Training</div></li>
+                    <li class="step" data-step="2"><div class="step-circle">3</div><div class="step-title">Upload</div></li>
                 </ul>
                 
-                <form id="employeeForm">
-                    <!-- Step 1: Employee Information -->
+                <!-- ====== FORM TAG UPDATED ====== -->
+                <form id="employeeForm" novalidate>
                     <div class="form-step active">
                         <fieldset>
-                            <div class="form-group"> <label for="empName">Emp Name</label> <input type="text" id="empName" name="empName" required> </div>
-                            <div class="form-group"> <label for="empCode">Emp Code</label> <input type="text" id="empCode" name="empCode" required> </div>
-                            <div class="form-group"> <label for="emailId">Email ID</label> <input type="email" id="emailId" name="emailId" required> </div>
-                            <div class="form-group"> <label for="contactNumber">Contact Number</label> <input type="tel" id="contactNumber" name="contactNumber" required> </div>
+                            <div class="form-group"><label for="empName">Emp Name</label><input type="text" id="empName" name="empName" required></div>
+                            <div class="form-group"><label for="empCode">Emp Code</label><input type="text" id="empCode" name="empCode" required></div>
+                            <div class="form-group"><label for="emailId">Email ID</label><input type="email" id="emailId" name="emailId" required></div>
+                            <div class="form-group"><label for="contactNumber">Contact Number</label><input type="tel" id="contactNumber" name="contactNumber" required></div>
                         </fieldset>
                     </div>
 
-                    <!-- Step 2: Training Selection -->
                     <div class="form-step">
                         <fieldset>
                             <div class="form-group">
                                 <label for="department">Department</label>
                                 <select id="department" name="department" required>
                                     <option value="" disabled selected>Select Department</option>
-                                   
-                                    <option value="Inside Sales">Inside Sales</option>
-                                    <option value="LEnS & Retention">LEnS & Retention</option>
-                                    <option value="HR">HR</option>
+                                    <option value="Inside Sales">Inside Sales</option><option value="LEnS & Retention">LEnS & Retention</option><option value="HR">HR</option><option value="Accounts and Reporting">Accounts and Reporting</option><option value="Administration">Administration</option><option value="Branding">Branding</option><option value="Business Development">Business Development</option><option value="Business Intelligence">Business Intelligence</option><option value="Business Operations">Business Operations</option><option value="Business Process & Optimization">Business Process & Optimization</option><option value="Busness Analytics">Busness Analytics</option><option value="Channel Sales">Channel Sales</option><option value="Content Development and Management">Content Development and Management</option><option value="Data Management">Data Management</option><option value="Design School">Design School</option><option value="Document Verification">Document Verification</option><option value="Engage">Engage</option><option value="Enterprises Sales">Enterprises Sales</option><option value="Finance & Accounts">Finance & Accounts</option><option value="International">International</option><option value="JAIN Sports">JAIN Sports</option><option value="JIRS">JIRS</option><option value="JU - JIRS">JU - JIRS</option><option value="Learning">Learning</option><option value="Learning Management System">Learning Management System</option><option value="Marketing">Marketing</option><option value="Marketing and Growth">Marketing and Growth</option><option value="Mgt Trainees / Research">Mgt Trainees / Research</option><option value="Operations">Operations</option><option value="Outreach">Outreach</option><option value="Outreach - Sales">Outreach - Sales</option><option value="Performance Marketing">Performance Marketing</option><option value="Placement">Placement</option><option value="Product and CRM">Product and CRM</option><option value="Sales">Sales</option><option value="Sales JIRS">Sales JIRS</option><option value="Sales Operations (CP)">Sales Operations (CP)</option><option value="Sales Operations (CP-SP)">Sales Operations (CP-SP)</option><option value="Sales Operations (PAD)">Sales Operations (PAD)</option><option value="Sales Operations (POB)">Sales Operations (POB)</option><option value="Technology">Technology</option><option value="Technology Anveshana">Technology Anveshana</option><option value="University Relations">University Relations</option><option value="USDC International">USDC International</option>
                                 </select>
                             </div>
-                            <div class="form-group"> <label for="linkedinPath">LinkedIn Path</label> <select id="linkedinPath" name="linkedinPath" required> <option value="" disabled selected>Select LinkedIn Path</option> </select> </div>
-                            <div class="form-group"> <label for="topic">Topic</label> <select id="topic" name="topic" required> <option value="" disabled selected>Select Topic</option> </select> </div>
+                            <div class="form-group"><label for="linkedinPath">LinkedIn Path</label><select id="linkedinPath" name="linkedinPath" required><option value="" disabled selected>Select LinkedIn Path</option></select></div>
+                            <div class="form-group"><label for="topic">Topic</label><select id="topic" name="topic" required><option value="" disabled selected>Select Topic</option></select></div>
                         </fieldset>
                     </div>
                     
-                    <!-- Step 3: Certificate Upload -->
                     <div class="form-step">
                         <fieldset>
-                            <div class="form-group"> 
-                                <label for="certificate">Attach your certificate</label> 
-                                <input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.jpeg,.png" required> 
-                            </div>
+                            <div class="form-group"><label for="certificate">Attach your certificate</label><input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.jpeg,.png" required></div>
                         </fieldset>
                     </div>
 
@@ -244,12 +119,8 @@
             </div>
         </div>
 
-        <!-- Thank You Screen -->
         <div id="thankYouContainer" style="display: none;">
-            <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                <circle cx="26" cy="26" r="25" fill="none" stroke="#28a745" stroke-width="2"/>
-                <path fill="none" stroke="#28a745" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-            </svg>
+            <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none" stroke="#28a745" stroke-width="2"/><path fill="none" stroke="#28a745" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
             <h3>Thank You!</h3>
             <p>Your training details have been submitted successfully.</p>
             <button type="button" id="resetFormBtn" class="nav-btn">Submit Another Response</button>
@@ -257,143 +128,79 @@
     </div>
 
 <script>
-    // --- DATA FOR DROPDOWNS ---
     const trainingData = {
-        "USDC": {
-            "Business Enabling Skills": ["Critical Thinking and Problem Solving"],
-            "Communication & Interpersonal Skills": ["Active Listening: The Secret to Effective Communication", "Effective Communication", "Business Etiquette: Phone, Email and Text", "Interpersonal Skills"],
-            "Customer Focus": ["Customer Service Foundations,"],
-            "Operational Excellence": ["Excel Essential Training (Microsoft 365)", "Time Management Fundamentals, the power of managing your time"]
-        },
-        "Inside Sales": {
-            "Sales - Objection Handling": ["Cold - Calling - Overcoming - Sales Objections"],
-            "Sales Negotiation & Closing": ["Sales Negotiation, Sales Negotiation", "Sales: Closing Strategies, Sales: Closing Strategies"],
-            "Sales Pitch": ["3 Simple Steps for Perfect Sales Pitch", "Delivering a Great Virtual Sales Pitch", "Cold - Calling - First -Seven - Seconds"],
-            "Sales Prospects": ["The 52 Best Sales Prospecting Tips"]
-        },
-        "LEnS & Retention": {
-            "Customer Experience": ["The 10 Pillars of Customer Experience", "Customer Experience: Creating Customer Personas"],
-            "Customer Service": ["Value Realization Best Practices for Customer Success Management", "Customer Service: Handling Abusive Customers", "How to Handle Conflict and Escalations Before They Turn Legal"],
-            "Quality Management": ["Quality Management Foundation"]
-        },
-        "HR": {
-            "HR Foundation": ["HR Foundations: Core Human Resources", "HR Foundations: Redefining HR"],
-            "Recruitments": ["Interviewing Techniques", "Recruiting Foundations", "Hire Better, Faster from Social & Digital Platforms"],
-            "Onboarding": ["Human Resources: Running Company Onboarding"]
-        }
+        "USDC": { "Business Enabling Skills": ["Critical Thinking and Problem Solving"], "Communication & Interpersonal Skills": ["Active Listening: The Secret to Effective Communication", "Effective Communication", "Business Etiquette: Phone, Email and Text", "Interpersonal Skills"], "Customer Focus": ["Customer Service Foundations,"], "Operational Excellence": ["Excel Essential Training (Microsoft 365)", "Time Management Fundamentals, the power of managing your time"] },
+        "Inside Sales": { "Sales - Objection Handling": ["Cold - Calling - Overcoming - Sales Objections"], "Sales Negotiation & Closing": ["Sales Negotiation, Sales Negotiation", "Sales: Closing Strategies, Sales: Closing Strategies"], "Sales Pitch": ["3 Simple Steps for Perfect Sales Pitch", "Delivering a Great Virtual Sales Pitch", "Cold - Calling - First -Seven - Seconds"], "Sales Prospects": ["The 52 Best Sales Prospecting Tips"] },
+        "LEnS & Retention": { "Customer Experience": ["The 10 Pillars of Customer Experience", "Customer Experience: Creating Customer Personas"], "Customer Service": ["Value Realization Best Practices for Customer Success Management", "Customer Service: Handling Abusive Customers", "How to Handle Conflict and Escalations Before They Turn Legal"], "Quality Management": ["Quality Management Foundation"] },
+        "HR": { "HR Foundation": ["HR Foundations: Core Human Resources", "HR Foundations: Redefining HR"], "Recruitments": ["Interviewing Techniques", "Recruiting Foundations", "Hire Better, Faster from Social & Digital Platforms"], "Onboarding": ["Human Resources: Running Company Onboarding"] }
     };
     
-    // --- DROPDOWN LOGIC ---
     const departmentSelect = document.getElementById('department');
     const pathSelect = document.getElementById('linkedinPath');
     const topicSelect = document.getElementById('topic');
     function populateSelect(select, items) { const defaultText = `Select ${select.id.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}`; select.innerHTML = `<option value="" disabled selected>${defaultText}</option>`; items.forEach(item => { const opt = document.createElement('option'); opt.value = item; opt.textContent = item; select.appendChild(opt); }); }
-    departmentSelect.addEventListener('change', function() { const dept = this.value; let paths = []; const commonPaths = Object.keys(trainingData["USDC"]); if (dept === "USDC") { paths = commonPaths; } else if (trainingData[dept]) { paths = [...commonPaths, ...Object.keys(trainingData[dept])]; } populateSelect(pathSelect, paths); populateSelect(topicSelect, []); });
+    departmentSelect.addEventListener('change', function() { const dept = this.value; const commonPaths = Object.keys(trainingData["USDC"]); let specificPaths = []; if (trainingData[dept] && dept !== "USDC") { specificPaths = Object.keys(trainingData[dept]); } const paths = [...new Set([...commonPaths, ...specificPaths])]; populateSelect(pathSelect, paths); populateSelect(topicSelect, []); });
     pathSelect.addEventListener('change', function() { const dept = departmentSelect.value; const path = this.value; let topics = []; if (dept && path) { if (trainingData[dept] && trainingData[dept][path]) { topics = trainingData[dept][path]; } else if (trainingData["USDC"][path]) { topics = trainingData["USDC"][path]; } } populateSelect(topicSelect, topics); });
 
-    // --- MULTI-STEP FORM LOGIC ---
     let currentStep = 0;
     const formSteps = document.querySelectorAll(".form-step");
     const progressSteps = document.querySelectorAll(".step");
     const backBtn = document.getElementById("backBtn");
     const nextBtn = document.getElementById("nextBtn");
     const submitBtn = document.getElementById("submitBtn");
-
-    function updateProgressBar() {
-        progressSteps.forEach((step, index) => {
-            if (index < currentStep) {
-                step.classList.add('completed');
-                step.classList.remove('active');
-            } else if (index === currentStep) {
-                step.classList.add('active');
-                step.classList.remove('completed');
-            } else {
-                step.classList.remove('active', 'completed');
-            }
-        });
-    }
-
-    function showStep(stepIndex) {
-        formSteps.forEach((step, i) => step.classList.toggle("active", i === stepIndex));
-        backBtn.style.display = stepIndex > 0 ? "inline-block" : "none";
-        nextBtn.style.display = stepIndex < formSteps.length - 1 ? "inline-block" : "none";
-        submitBtn.style.display = stepIndex === formSteps.length - 1 ? "inline-block" : "none";
-        updateProgressBar();
-    }
-
-    function validateStep(stepIndex) { let isValid = true; const fields = formSteps[stepIndex].querySelectorAll("input[required], select[required]"); fields.forEach(f => { f.classList.remove("invalid"); if (!f.value.trim()) { isValid = false; f.classList.add("invalid"); } }); return isValid; }
+    function updateProgressBar() { progressSteps.forEach((step, index) => { if (index < currentStep) { step.classList.add('completed'); step.classList.remove('active'); } else if (index === currentStep) { step.classList.add('active'); step.classList.remove('completed'); } else { step.classList.remove('active', 'completed'); } }); }
+    function showStep(stepIndex) { formSteps.forEach((step, i) => step.classList.toggle("active", i === stepIndex)); backBtn.style.display = stepIndex > 0 ? "inline-block" : "none"; nextBtn.style.display = stepIndex < formSteps.length - 1 ? "inline-block" : "none"; submitBtn.style.display = stepIndex === formSteps.length - 1 ? "inline-block" : "none"; updateProgressBar(); }
+    function validateStep(stepIndex) { let isValid = true; const fields = formSteps[stepIndex].querySelectorAll("input[required], select[required]"); fields.forEach(f => { f.classList.remove("invalid"); if (!f.value || (f.type === 'file' && f.files.length === 0) || !f.value.trim()) { isValid = false; f.classList.add("invalid"); } }); return isValid; }
     nextBtn.addEventListener("click", () => { if (validateStep(currentStep)) { currentStep++; showStep(currentStep); } else { alert("Please fill out all required fields."); } });
     backBtn.addEventListener("click", () => { currentStep--; showStep(currentStep); });
     showStep(currentStep);
 
-    // =========================================================================
-    // FORM SUBMISSION AND "THANK YOU" PAGE LOGIC
-    // =========================================================================
     const form = document.getElementById("employeeForm");
     const formWrapper = document.getElementById("formWrapper");
     const thankYouContainer = document.getElementById("thankYouContainer");
     const statusMessage = document.getElementById("status-message");
     const resetFormBtn = document.getElementById("resetFormBtn");
 
+    // ====== FORM SUBMISSION LOGIC FULLY REWRITTEN ======
     form.addEventListener("submit", function(e) {
         e.preventDefault();
         if (!validateStep(currentStep)) {
-            alert("Please upload your certificate to submit the form.");
+            alert("Please ensure you have attached your certificate.");
             return;
         }
 
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzl8OntXmIqNDEVD-eGd9LTahWy5SKdSZ5iZCC9CGoz-mkcP3xFmD8SzcORL5vE7aP6FQ/exec";
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyDViks0CtcA20QoWV8zaakumUjRdrZxx7svgCrRBXeCLQBmaL5NtCfnmAt2sEVq7N1XQ/exec";
         const submitButton = document.getElementById('submitBtn');
         submitButton.disabled = true;
         statusMessage.textContent = "Submitting, please wait...";
         statusMessage.className = "";
 
-        const file = document.getElementById('certificate').files[0];
-        const reader = new FileReader();
+        // Use FormData to correctly handle file uploads
+        const formData = new FormData(form);
 
-        const sendData = (fileInfo) => {
-            const formData = {
-                empName: document.getElementById('empName').value,
-                empCode: document.getElementById('empCode').value,
-                emailId: document.getElementById('emailId').value,
-                contactNumber: document.getElementById('contactNumber').value,
-                department: document.getElementById('department').value,
-                linkedinPath: document.getElementById('linkedinPath').value,
-                topic: document.getElementById('topic').value,
-                ...fileInfo
-            };
-
-            fetch(WEB_APP_URL, {
-                method: 'POST',
-                body: JSON.stringify(formData),
-                mode: 'no-cors' 
-            })
-            .then(response => {
-                formWrapper.style.display = 'none';
-                thankYouContainer.style.display = 'block';
-            })
-            .catch(error => {
-                statusMessage.textContent = "An error occurred during submission. Please try again.";
-                statusMessage.className = "error";
-            })
-            .finally(() => {
-                submitButton.disabled = false;
-            });
-        };
-
-        if (file) {
-            reader.onload = e => {
-                sendData({
-                    certificateFile: e.target.result, // base64 string
-                    certificateMimeType: file.type,
-                    certificateFileName: file.name
-                });
-            };
-            reader.readAsDataURL(file);
-        } else {
-            alert("Certificate file is missing!");
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            // Note: We can't read the response body due to CORS policy.
+            // We will optimistically assume the request was processed successfully on the server.
+            console.log('Received response (opaque):', response);
+            if (response.type === 'opaque' || response.ok) {
+                 formWrapper.style.display = 'none';
+                 thankYouContainer.style.display = 'block';
+            } else {
+                throw new Error('Network response was not ok.');
+            }
+        })
+        .catch(error => {
+            console.error('Submission Error:', error);
+            statusMessage.textContent = `Error: Submission failed. Please check your network and try again.`;
+            statusMessage.className = "error";
+        })
+        .finally(() => {
             submitButton.disabled = false;
-        }
+        });
     });
 
     resetFormBtn.addEventListener('click', () => {
@@ -403,8 +210,9 @@
         currentStep = 0;
         showStep(currentStep);
         statusMessage.textContent = "";
+        populateSelect(pathSelect, []);
+        populateSelect(topicSelect, []);
     });
-
 </script>
 
 </body>
