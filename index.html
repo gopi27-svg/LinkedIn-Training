@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Training Form</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Training Form</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -63,70 +64,64 @@
     </style>
 </head>
 <body>
-
-    <div class="main-wrapper">
-        <div id="formWrapper">
-            <div class="form-container">
-                <div class="logo-container">
-                    <img src="https://i.postimg.cc/pTJQwfkV/USDC-Logo.png" alt="Company Logo">
-                </div>
-                <h2>LinkedIn Training Details</h2>
-
-                <ul class="progress-bar-container">
-                    <li class="step active" data-step="0"><div class="step-circle">1</div><div class="step-title">Employee Info</div></li>
-                    <li class="step" data-step="1"><div class="step-circle">2</div><div class="step-title">Training</div></li>
-                    <li class="step" data-step="2"><div class="step-circle">3</div><div class="step-title">Upload</div></li>
-                </ul>
-                
-                <!-- ====== FORM TAG UPDATED ====== -->
-                <form id="employeeForm" novalidate>
-                    <div class="form-step active">
-                        <fieldset>
-                            <div class="form-group"><label for="empName">Emp Name</label><input type="text" id="empName" name="empName" required></div>
-                            <div class="form-group"><label for="empCode">Emp Code</label><input type="text" id="empCode" name="empCode" required></div>
-                            <div class="form-group"><label for="emailId">Email ID</label><input type="email" id="emailId" name="emailId" required></div>
-                            <div class="form-group"><label for="contactNumber">Contact Number</label><input type="tel" id="contactNumber" name="contactNumber" required></div>
-                        </fieldset>
-                    </div>
-
-                    <div class="form-step">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="department">Department</label>
-                                <select id="department" name="department" required>
-                                    <option value="" disabled selected>Select Department</option>
-                                    <option value="Inside Sales">Inside Sales</option><option value="LEnS & Retention">LEnS & Retention</option><option value="HR">HR</option><option value="Accounts and Reporting">Accounts and Reporting</option><option value="Administration">Administration</option><option value="Branding">Branding</option><option value="Business Development">Business Development</option><option value="Business Intelligence">Business Intelligence</option><option value="Business Operations">Business Operations</option><option value="Business Process & Optimization">Business Process & Optimization</option><option value="Busness Analytics">Busness Analytics</option><option value="Channel Sales">Channel Sales</option><option value="Content Development and Management">Content Development and Management</option><option value="Data Management">Data Management</option><option value="Design School">Design School</option><option value="Document Verification">Document Verification</option><option value="Engage">Engage</option><option value="Enterprises Sales">Enterprises Sales</option><option value="Finance & Accounts">Finance & Accounts</option><option value="International">International</option><option value="JAIN Sports">JAIN Sports</option><option value="JIRS">JIRS</option><option value="JU - JIRS">JU - JIRS</option><option value="Learning">Learning</option><option value="Learning Management System">Learning Management System</option><option value="Marketing">Marketing</option><option value="Marketing and Growth">Marketing and Growth</option><option value="Mgt Trainees / Research">Mgt Trainees / Research</option><option value="Operations">Operations</option><option value="Outreach">Outreach</option><option value="Outreach - Sales">Outreach - Sales</option><option value="Performance Marketing">Performance Marketing</option><option value="Placement">Placement</option><option value="Product and CRM">Product and CRM</option><option value="Sales">Sales</option><option value="Sales JIRS">Sales JIRS</option><option value="Sales Operations (CP)">Sales Operations (CP)</option><option value="Sales Operations (CP-SP)">Sales Operations (CP-SP)</option><option value="Sales Operations (PAD)">Sales Operations (PAD)</option><option value="Sales Operations (POB)">Sales Operations (POB)</option><option value="Technology">Technology</option><option value="Technology Anveshana">Technology Anveshana</option><option value="University Relations">University Relations</option><option value="USDC International">USDC International</option>
-                                </select>
-                            </div>
-                            <div class="form-group"><label for="linkedinPath">LinkedIn Path</label><select id="linkedinPath" name="linkedinPath" required><option value="" disabled selected>Select LinkedIn Path</option></select></div>
-                            <div class="form-group"><label for="topic">Topic</label><select id="topic" name="topic" required><option value="" disabled selected>Select Topic</option></select></div>
-                        </fieldset>
-                    </div>
-                    
-                    <div class="form-step">
-                        <fieldset>
-                            <div class="form-group"><label for="certificate">Attach your certificate</label><input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.jpeg,.png" required></div>
-                        </fieldset>
-                    </div>
-
-                    <div id="status-message"></div>
-                    <div class="navigation-buttons">
-                        <button type="button" id="backBtn" class="nav-btn">Back</button>
-                        <button type="button" id="nextBtn" class="nav-btn">Next</button>
-                        <button type="submit" id="submitBtn" class="nav-btn">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div id="thankYouContainer" style="display: none;">
-            <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none" stroke="#28a745" stroke-width="2"/><path fill="none" stroke="#28a745" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
-            <h3>Thank You!</h3>
-            <p>Your training details have been submitted successfully.</p>
-            <button type="button" id="resetFormBtn" class="nav-btn">Submit Another Response</button>
-        </div>
-    </div>
-
+<!-- ====== STEP 1: ADD HIDDEN IFRAME FOR SUBMISSION ====== -->
+<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
+<div class="main-wrapper">
+<div id="formWrapper">
+<div class="form-container">
+<div class="logo-container">
+<img alt="Company Logo" src="https://i.postimg.cc/pTJQwfkV/USDC-Logo.png"/>
+</div>
+<h2>LinkedIn Training Details</h2>
+<ul class="progress-bar-container">
+<li class="step active" data-step="0"><div class="step-circle">1</div><div class="step-title">Employee Info</div></li>
+<li class="step" data-step="1"><div class="step-circle">2</div><div class="step-title">Training</div></li>
+<li class="step" data-step="2"><div class="step-circle">3</div><div class="step-title">Upload</div></li>
+</ul>
+<!-- ====== STEP 2: UPDATE FORM TAG ====== -->
+<form action="https://script.google.com/macros/s/AKfycbzgf87MsvKj6ManmvniCRbW-I61WNtfXYtOlJbnIQYW8-E7Mpb8sBTeSbumPKe6iLHM-A/exec" id="employeeForm" method="post" novalidate="" target="hidden_iframe">
+<div class="form-step active">
+<fieldset>
+<div class="form-group"><label for="empName">Emp Name</label><input id="empName" name="empName" required="" type="text"/></div>
+<div class="form-group"><label for="empCode">Emp Code</label><input id="empCode" name="empCode" required="" type="text"/></div>
+<div class="form-group"><label for="emailId">Email ID</label><input id="emailId" name="emailId" required="" type="email"/></div>
+<div class="form-group"><label for="contactNumber">Contact Number</label><input id="contactNumber" name="contactNumber" required="" type="tel"/></div>
+</fieldset>
+</div>
+<div class="form-step">
+<fieldset>
+<div class="form-group">
+<label for="department">Department</label>
+<select id="department" name="department" required="">
+<option disabled="" selected="" value="">Select Department</option>
+<option value="Inside Sales">Inside Sales</option><option value="LEnS &amp; Retention">LEnS &amp; Retention</option><option value="HR">HR</option><option value="Accounts and Reporting">Accounts and Reporting</option><option value="Administration">Administration</option><option value="Branding">Branding</option><option value="Business Development">Business Development</option><option value="Business Intelligence">Business Intelligence</option><option value="Business Operations">Business Operations</option><option value="Business Process &amp; Optimization">Business Process &amp; Optimization</option><option value="Busness Analytics">Busness Analytics</option><option value="Channel Sales">Channel Sales</option><option value="Content Development and Management">Content Development and Management</option><option value="Data Management">Data Management</option><option value="Design School">Design School</option><option value="Document Verification">Document Verification</option><option value="Engage">Engage</option><option value="Enterprises Sales">Enterprises Sales</option><option value="Finance &amp; Accounts">Finance &amp; Accounts</option><option value="International">International</option><option value="JAIN Sports">JAIN Sports</option><option value="JIRS">JIRS</option><option value="JU - JIRS">JU - JIRS</option><option value="Learning">Learning</option><option value="Learning Management System">Learning Management System</option><option value="Marketing">Marketing</option><option value="Marketing and Growth">Marketing and Growth</option><option value="Mgt Trainees / Research">Mgt Trainees / Research</option><option value="Operations">Operations</option><option value="Outreach">Outreach</option><option value="Outreach - Sales">Outreach - Sales</option><option value="Performance Marketing">Performance Marketing</option><option value="Placement">Placement</option><option value="Product and CRM">Product and CRM</option><option value="Sales">Sales</option><option value="Sales JIRS">Sales JIRS</option><option value="Sales Operations (CP)">Sales Operations (CP)</option><option value="Sales Operations (CP-SP)">Sales Operations (CP-SP)</option><option value="Sales Operations (PAD)">Sales Operations (PAD)</option><option value="Sales Operations (POB)">Sales Operations (POB)</option><option value="Technology">Technology</option><option value="Technology Anveshana">Technology Anveshana</option><option value="University Relations">University Relations</option><option value="USDC International">USDC International</option>
+</select>
+</div>
+<div class="form-group"><label for="linkedinPath">LinkedIn Path</label><select id="linkedinPath" name="linkedinPath" required=""><option disabled="" selected="" value="">Select LinkedIn Path</option></select></div>
+<div class="form-group"><label for="topic">Topic</label><select id="topic" name="topic" required=""><option disabled="" selected="" value="">Select Topic</option></select></div>
+</fieldset>
+</div>
+<div class="form-step">
+<fieldset>
+<div class="form-group"><label for="certificate">Attach your certificate</label><input accept=".pdf,.jpg,.jpeg,.png" id="certificate" name="certificate" required="" type="file"/></div>
+</fieldset>
+</div>
+<div id="status-message"></div>
+<div class="navigation-buttons">
+<button class="nav-btn" id="backBtn" type="button">Back</button>
+<button class="nav-btn" id="nextBtn" type="button">Next</button>
+<button class="nav-btn" id="submitBtn" type="submit">Submit</button>
+</div>
+</form>
+</div>
+</div>
+<div id="thankYouContainer" style="display: none;">
+<svg class="success-icon" viewbox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" fill="none" r="25" stroke="#28a745" stroke-width="2"></circle><path d="M14.1 27.2l7.1 7.2 16.7-16.8" fill="none" stroke="#28a745" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<h3>Thank You!</h3>
+<p>Your training details have been submitted successfully.</p>
+<button class="nav-btn" id="resetFormBtn" type="button">Submit Another Response</button>
+</div>
+</div>
 <script>
     const trainingData = {
         "USDC": { "Business Enabling Skills": ["Critical Thinking and Problem Solving"], "Communication & Interpersonal Skills": ["Active Listening: The Secret to Effective Communication", "Effective Communication", "Business Etiquette: Phone, Email and Text", "Interpersonal Skills"], "Customer Focus": ["Customer Service Foundations,"], "Operational Excellence": ["Excel Essential Training (Microsoft 365)", "Time Management Fundamentals, the power of managing your time"] },
@@ -161,46 +156,24 @@
     const statusMessage = document.getElementById("status-message");
     const resetFormBtn = document.getElementById("resetFormBtn");
 
-    // ====== FORM SUBMISSION LOGIC FULLY REWRITTEN ======
+    // ====== STEP 3: REWRITE SUBMISSION LOGIC ======
     form.addEventListener("submit", function(e) {
-        e.preventDefault();
         if (!validateStep(currentStep)) {
+            e.preventDefault(); // Prevent submission if validation fails
             alert("Please ensure you have attached your certificate.");
             return;
         }
 
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyDViks0CtcA20QoWV8zaakumUjRdrZxx7svgCrRBXeCLQBmaL5NtCfnmAt2sEVq7N1XQ/exec";
         const submitButton = document.getElementById('submitBtn');
         submitButton.disabled = true;
         statusMessage.textContent = "Submitting, please wait...";
         statusMessage.className = "";
 
-        // Use FormData to correctly handle file uploads
-        const formData = new FormData(form);
-
-        fetch(WEB_APP_URL, {
-            method: 'POST',
-            body: formData,
-        })
-        .then(response => {
-            // Note: We can't read the response body due to CORS policy.
-            // We will optimistically assume the request was processed successfully on the server.
-            console.log('Received response (opaque):', response);
-            if (response.type === 'opaque' || response.ok) {
-                 formWrapper.style.display = 'none';
-                 thankYouContainer.style.display = 'block';
-            } else {
-                throw new Error('Network response was not ok.');
-            }
-        })
-        .catch(error => {
-            console.error('Submission Error:', error);
-            statusMessage.textContent = `Error: Submission failed. Please check your network and try again.`;
-            statusMessage.className = "error";
-        })
-        .finally(() => {
-            submitButton.disabled = false;
-        });
+        // The form will submit to the iframe. We just wait a moment and then show the thank you message.
+        setTimeout(() => {
+            formWrapper.style.display = 'none';
+            thankYouContainer.style.display = 'block';
+        }, 1500); // Wait 1.5 seconds to allow time for submission
     });
 
     resetFormBtn.addEventListener('click', () => {
@@ -215,5 +188,78 @@
     });
 </script>
 
+<script>
+(function() {
+  var form = document.getElementById('employeeForm');
+  if (!form) return;
+
+  // Try to detect a submit button to show loading states (optional, non-UI changing)
+  var submitBtn = form.querySelector('[type="submit"]');
+
+  // Attempt to locate likely elements by known ids; do NOT modify the DOM/labels.
+  function val(id){ var el = document.getElementById(id); return el ? el.value : ''; }
+
+  // Heuristically find a file input (first file input in the form).
+  var fileInput = form.querySelector('input[type="file"]');
+
+  // If there's no file input, just allow default submission (keeps original behavior).
+  if (!fileInput) return;
+
+  // Intercept submit to send base64 to Apps Script
+  form.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+
+    if (!fileInput.files || fileInput.files.length === 0) {
+      try { alert('Please attach your certificate.'); } catch(e){}
+      return;
+    }
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    var file = fileInput.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var dataUrl = e.target.result;               // "data:<mime>;base64,....."
+      var base64  = (dataUrl.split(',')[1] || '');
+
+      // Collect all text inputs/selects/textarea values without changing your form
+      var params = new URLSearchParams();
+      var fields = form.querySelectorAll('input[name], select[name], textarea[name]');
+      fields.forEach(function(f){
+        if (f.type === 'file') return; // skip file
+        if ((f.type === 'checkbox' || f.type === 'radio') && !f.checked) return;
+        params.append(f.name, f.value || '');
+      });
+
+      // Attach file meta + content for GAS base64 path
+      params.append('filename', file.name);
+      params.append('mimeType', file.type || 'application/octet-stream');
+      params.append('filedata', base64);
+
+      fetch(form.action, { method: 'POST', body: params })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(res){
+          // Prefer not to alter your UI; try to submit to original target if it existed.
+          // If there was a hidden iframe flow, we keep the thank-you logic in your page intact
+          // by simulating success without altering layout.
+          try {
+            // If you have any success handlers already, trigger a custom event
+            var evt = new CustomEvent('form-submit-success', { detail: res });
+            form.dispatchEvent(evt);
+          } catch(e){}
+          if (submitBtn) submitBtn.disabled = false;
+          // If you redirected or swapped UI earlier, that code will still run (we didn't remove it).
+          // Otherwise, show a tiny non-intrusive notice:
+          try { console.log('Upload success', res); } catch(e){}
+        })
+        .catch(function(err){
+          if (submitBtn) submitBtn.disabled = false;
+          try { console.error('Upload failed', err); alert('Upload failed. Please try again.'); } catch(e){}
+        });
+    };
+    reader.readAsDataURL(file);
+  }, { once: true });
+})();
+</script>
 </body>
 </html>
